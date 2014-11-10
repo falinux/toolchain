@@ -6,6 +6,8 @@ cd toolchain
 
 git clone git@192.168.3.13:toolchain/arm-linux-gnueabihf-4-6-3.git
 
+cd arm-linux-gnueabihf-4-6-3/
+
 install.sh
 
 
