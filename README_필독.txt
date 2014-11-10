@@ -1,35 +1,20 @@
-1. 임의의 디렉토리에 toolchain_4.6.3_ubuntu_12.04_make.tar.gz 압축을 푼다.
+cd ~
 
-    # mkdir /tmp_tool
-    # cd /tmp_tool
-    # tar -zxvf toolchain_4.6.3_ubuntu_12.04_make.tar.gz
+mkdir toolchain
 
-2. 압축을 풀면 다음과 같은 디렉토리와 파일들이 생성된다.
+cd toolchain
 
-    # ls
-      deb
-      arm-linux-gnueabihf-4.6.3.tar.gz
-      toolchain-4.6.3-deb_make.sh
-      toolchain-4.6.3-install.sh
-      
-3. 툴체인만 설치할 경우 아래와 같이 설정하면 된다.
+git clone git@192.168.3.13:toolchain/arm-linux-gnueabihf-4-6-3.git
 
-    # ./toolchain-4.6.3-install.sh
-    
-    # ls /usr/arm-linux-gnueabihf
-      bin  include  lib          
+install.sh
 
-    # arm-linux-gnueabihf-gcc -v                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-    Using built-in specs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-    COLLECT_GCC=arm-linux-gnueabihf-gcc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-    COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/4.6/lto-wrapper                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-    Target: arm-linux-gnueabihf                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-    Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.3-1ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/arm-linux-gnueabihf/include/c++/4.6.3 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --enable-multilib --disable-sjlj-exceptions --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb --disable-werror --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --includedir=/usr/arm-linux-gnueabihf/include --with-headers=/usr/arm-linux-gnueabihf/include --with-libs=/usr/arm-linux-gnueabihf/lib
-    Thread model: posix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-    gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5)
 
-4. 툴체인을 만들고, 설치할 경우 아래와 같이 설정하면 된다.
+####################################################################
 
-    # ./toolchain-4.6.3-deb_make.sh
-    # ./toolchain-4.6.3-install.sh
-    
+#!/bin/sh
+
+tar zxvf arm-linux-gnueabihf-4-6-3.tar.gz
+
+export CC=`pwd`/arm-linux-gnueabihf-4-6-3/bin/arm-linux-gnueabihf-
+
+
