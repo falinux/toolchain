@@ -5,6 +5,16 @@ imx6 부트로더와 커널을 빌드하기 위한 툴체인 사용법입니다.
 
 https://launchpad.net/linaro-toolchain-binaries
 
+또한 apt-get을 이용해서 아래 패키지를 설치해도 동일하게 사용 가능합니다.(마찬가지로 위의 사이트에서 가져옵니다)
+이 경우 여러개의 툴체인을 사용하시는 경우 꼬일 수 있으니 아래의 압축 패키지를 이용하는 것을 추천합니다.
+
+gcc-4.8-arm-linux-gnueabihf - GNU C compiler
+gcc-4.8-arm-linux-gnueabihf-base - GCC, the GNU Compiler Collection (base package)
+
+apt-get install gcc-4.8-arm-linux-gnueabihf
+또는 apt-get install gcc-4.8-arm-linux-gnueabihf-base
+
+
 아래는 툴체인에 대한 간단한 정보입니다. 툴체인에 대한 더 자세한 정보와 버전정보, 
 리눅스 버전을 제외한 OS를 위한 패키지는 위의 페이지를 참고하세요
 
@@ -20,6 +30,8 @@ The Linux version is supported on Ubuntu 10.04.3 and 11.10, Debian 6.0.2, Fedora
 
 The Windows version is supported on Windows XP Pro SP3, Windows Vista Business SP2, and Windows 7 Pro SP1.
 
+
+
 우분투 리눅스 64비트는 아래와 같이 ia32-libs를 설치해야 합니다. 
 
 sudo apt-get install ia32-libs
@@ -27,6 +39,10 @@ sudo apt-get install ia32-libs
 우분투 64비트 14.04 LTS의 경우 아래와 같이 대체 패키지를 모두 설치하시면 됩니다.
 
 sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+
+
+
+
 
 다운로드 받은 툴체인 압축 패키지의 압축을 해제 합니다.
 
